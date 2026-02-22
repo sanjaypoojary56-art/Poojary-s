@@ -1,18 +1,180 @@
-body { font-family:sans-serif; margin:20px;
-     background-color: red;}
-input { padding:5px; margin:5px; }
-button { padding:5px 10px; cursor:pointer; }
+/* ===== GLOBAL RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
 
-/* Boxes */
-#register-box, #login-box { border:1px solid #ccc; padding:10px; width:220px; margin-bottom:20px; }
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  overflow-x: hidden;
+}
 
-/* Lamp */
-.lamp { position: relative; width:50px; margin:20px; }
-.string { width:2px; height:80px; background:#000; margin:auto; cursor:grab; }
-.bulb { width:30px; height:30px; background:yellow; border-radius:50%; margin:auto; }
-#face { text-align:center; font-size:24px; margin-top:10px; }
+/* ===== HEADINGS ===== */
+h1 {
+  margin-top: 30px;
+  font-size: 42px;
+  letter-spacing: 2px;
+  text-shadow: 0 0 20px rgba(255,255,255,0.5);
+}
 
-/* Products */
-#products { display:flex; flex-wrap:wrap; }
-.product-card { border:1px solid #ccc; padding:10px; margin:10px; width:200px; text-align:center; }
-.product-card img { width:100%; height:auto; }
+h2 {
+  margin-bottom: 15px;
+}
+
+/* ===== GLASS CARD ===== */
+#register-box,
+#login-box {
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  padding: 25px;
+  width: 320px;
+  margin: 20px;
+  box-shadow: 0 0 40px rgba(0,0,0,0.5);
+  transition: 0.4s ease;
+}
+
+#register-box:hover,
+#login-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 60px rgba(255,255,255,0.2);
+}
+
+/* ===== INPUTS ===== */
+input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  background: rgba(255,255,255,0.1);
+  color: white;
+  font-size: 14px;
+}
+
+input::placeholder {
+  color: rgba(255,255,255,0.6);
+}
+
+/* ===== BUTTON ===== */
+button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 15px;
+  background: linear-gradient(45deg, #ff512f, #dd2476);
+  color: white;
+  transition: 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px #ff2e63;
+}
+
+/* ===== LAMP AREA ===== */
+#lamp-area {
+  margin: 40px;
+  position: relative;
+}
+
+/* ===== LAMP DESIGN ===== */
+.lamp {
+  position: relative;
+  width: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.string {
+  width: 4px;
+  height: 120px;
+  background: white;
+  cursor: grab;
+}
+
+.bulb {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #fff176, #fbc02d);
+  box-shadow: 0 0 60px #ffd54f, 0 0 120px #ffeb3b;
+  transition: 0.4s ease;
+}
+
+#face {
+  margin-top: 15px;
+  font-size: 28px;
+  transition: 0.3s ease;
+}
+
+/* ===== PRODUCTS ===== */
+#products {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px;
+}
+
+.product-card {
+  width: 260px;
+  margin: 20px;
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 0 30px rgba(0,0,0,0.6);
+  transition: 0.4s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 60px rgba(255,255,255,0.3);
+}
+
+.product-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 15px;
+  margin-bottom: 15px;
+}
+
+.product-card h3 {
+  margin-bottom: 10px;
+}
+
+.product-card p {
+  font-size: 14px;
+  opacity: 0.8;
+  margin-bottom: 10px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  #register-box,
+  #login-box {
+    width: 90%;
+  }
+
+  h1 {
+    font-size: 32px;
+  }
+
+  .product-card {
+    width: 90%;
+  }
+}
